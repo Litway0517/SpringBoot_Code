@@ -7,7 +7,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <!-- 这一行能够更改SpringBoot版本 即使创建项目时选择不了但是这里能改 -->
         <version>2.6.6</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <groupId>com.itheima</groupId>
