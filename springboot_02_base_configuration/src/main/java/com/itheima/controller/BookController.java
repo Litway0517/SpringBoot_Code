@@ -16,6 +16,8 @@ public class BookController {
         System.out.println("country ====> " + country);
         System.out.println("username ====> " + username);
         System.out.println("age ====> " + age);
+        System.out.println("dir ====> " + dir);
+        System.out.println("dir2 ====> " + dir2);
         return "{'data':'获取图书列表...'}";
     }
 
@@ -28,5 +30,11 @@ public class BookController {
 
     @Value("${users2[0].age}")
     private String age;
+
+    @Value("${tempDir}")
+    private String dir;
+
+    @Value("${tempDir3}")
+    private String dir2;
 
 }

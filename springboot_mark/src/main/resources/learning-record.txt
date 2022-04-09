@@ -1,11 +1,12 @@
 
-
 =========================================
+
 Tips" 学习顺序记录
     1- springboot_01_01_quickstart: 基于IDEA直接创建SpringBoot, 网址是https://start.spring.io
     2- springboot_01_02_quickstart: 基于https://start.spring.io官网上进行创建, 然后导入模块
     3- 阿里云创建这一个被省略了, 没什么技术
-    4- 手工创建SpringBoot工程
+    4- springboot_01_04_quickstart: 手工创建SpringBoot工程
+    5- springboot_02_base_configuration: 配置篇, 讲解SpringBoot|YML的配置
 
 
 
