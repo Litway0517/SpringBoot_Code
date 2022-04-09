@@ -1,14 +1,19 @@
 package com.ithiema;
 
 
+import com.ithiema.controller.BookController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class SpringBootApplicationTest {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootApplicationTest.class);
+        ConfigurableApplicationContext ctx = SpringApplication.run(SpringBootApplicationTest.class);
+        BookController bean = ctx.getBean(BookController.class);
+        // Bean的信息 ===========> com.ithiema.controller.BookController@267bbe1a
+        System.out.println("Bean的信息 ===========> " + bean);
     }
 
 }
