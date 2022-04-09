@@ -25,7 +25,9 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <!-- springboot将tomcat定位为辅助工具 所以在这里尝试排除tomcat-starter依赖 再测试 -->
+            <!--
+                springboot将tomcat定位为辅助工具 所以在这里尝试排除tomcat-starter依赖 再测试
+            -->
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -33,6 +35,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- 导入一个jetty服务器 复制粘贴一样的就行只不过把tomcat换成jetty -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+        </dependency>
+
         <!--
             导入servlet坐标
             这里面并没有version标签, 但是刷新依赖后, 得到的是v4.0.1版本,
