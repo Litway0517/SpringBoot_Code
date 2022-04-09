@@ -17,3 +17,22 @@ users:
 
 # 对象类型的数组缩写
 users2: [ {name: 小黑, age: 14}, {name: 小红, age: 15} ]
+
+
+baseDir1: c:\windows\1
+baseDir2: c:\windows\2
+baseDir3: c:\windows\3
+baseDir4: c:\windows\4
+
+
+# YML文件中的变量引用 -> 就是为了解决上面的情况, 如果根目录变成了d: 那么就需要更改很多
+baseDir: c:\windows
+
+tempDir: c:\windows\temp
+
+# 改成下面的
+tempDir2: ${basedir}\temp
+
+# 转义的情况 -> 加双引号 单引号不行
+tempDir3: "${basedir}\temp \t1 \t2 \t3"
+
