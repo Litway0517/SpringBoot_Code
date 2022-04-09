@@ -1,4 +1,4 @@
 # 修改服务器端口号
 server:
-  port: 81
+  port: 82
 
