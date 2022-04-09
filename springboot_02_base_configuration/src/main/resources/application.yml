@@ -4,3 +4,16 @@
 server:
   port: 81
 
+country: china
+
+# 对象类型的数组
+users:
+  -
+    name: 小黑
+    age: 14
+  -
+    name: 小红
+    age: 15
+
+# 对象类型的数组缩写
+users2: [ {name: 小黑, age: 14}, {name: 小红, age: 15} ]
