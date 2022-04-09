@@ -28,18 +28,18 @@
             <!--
                 springboot将tomcat定位为辅助工具 所以在这里尝试排除tomcat-starter依赖 再测试
             -->
-            <exclusions>
+            <!--<exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
         <!-- 导入一个jetty服务器 复制粘贴一样的就行只不过把tomcat换成jetty -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!--
             导入servlet坐标
