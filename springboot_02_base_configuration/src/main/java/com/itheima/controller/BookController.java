@@ -1,7 +1,7 @@
 package com.itheima.controller;
 
 
-import com.itheima.controller.entity.MyDataSource;
+import com.itheima.entity.MyDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
