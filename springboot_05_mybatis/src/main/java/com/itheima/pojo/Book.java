@@ -1,6 +1,8 @@
 package com.itheima.pojo;
 
 
+import lombok.Data;
+
 @Data
 public class Book {
 
