@@ -14,11 +14,6 @@ import org.springframework.stereotype.Repository;
 public interface BookMapper {
 
     @Select("select * from `t_book` where id=#{id} ")
-    default Book getBookById(Integer id) {
-
-        System.out.println("这个是bookMapper1");
-        return new Book();
-    }
-
+    public Book getBookById(Integer id);
 
 }
