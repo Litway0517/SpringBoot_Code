@@ -1,6 +1,7 @@
 package com.itheima.controller;
 
 
+import com.itheima.controller.entity.MyDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -23,6 +24,8 @@ public class BookController {
         System.out.println("--------------------------------");
         System.out.println("所有配置数据environment ====> " + environment);
         System.out.println("取出来某个environment中的数据 ====> " + environment.getProperty("users[0].name"));
+        System.out.println("--------------------------------");
+        System.out.println("加载YML中的某一段配置 =======> " + dataSource);
         return "{'data':'获取图书列表...'}";
     }
 
@@ -45,5 +48,9 @@ public class BookController {
     // 使用自动装配将所有的配置数据封装到一个对象中. 避免定义了上千个变量来接收配置中的数据
     @Autowired
     private Environment environment;
+
+    // 使用一个实体类将YML中的数据加载进来 -> 常用方式
+    @Autowired
+    private MyDataSource dataSource;
 
 }
