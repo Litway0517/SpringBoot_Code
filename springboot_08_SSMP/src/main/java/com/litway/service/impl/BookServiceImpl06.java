@@ -1,5 +1,6 @@
 package com.litway.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.litway.entity.Book;
 import com.litway.mapper.BookMapper;
@@ -12,4 +13,11 @@ public class BookServiceImpl06 extends ServiceImpl<BookMapper, Book> implements 
 
     @Autowired
     private BookMapper bookMapper;
+
+    @Override
+    public Page<Book> getPage(int currentPage, int pageSize) {
+        Page<Book> page = new Page<Book>(currentPage, pageSize);
+        bookMapper.selectPage(page, null);
+        return page;
+    }
 }
