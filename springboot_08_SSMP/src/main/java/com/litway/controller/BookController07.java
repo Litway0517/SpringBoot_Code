@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+// 注释掉, 不加载这个Bean了
+// @RestController
 @RequestMapping("/books")
 public class BookController07 {
 
