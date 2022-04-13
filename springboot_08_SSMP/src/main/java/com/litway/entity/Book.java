@@ -1,6 +1,8 @@
 package com.litway.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 @Data
@@ -13,4 +15,10 @@ public class Book {
     private String name;
 
     private String description;
+
+    @TableLogic
+    private boolean isDeleted;
+
+    @Version
+    private Integer version;
 }
