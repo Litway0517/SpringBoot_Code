@@ -19,16 +19,17 @@ public class BookController09 {
 
     @GetMapping("/list")
     public R08 list() throws IOException {
-        if (true) {
-            throw new IOException();
-        }
         return new R08(true, bookService.list());
     }
 
     @PostMapping
-    public R08 save(@RequestBody Book book) {
+    public R08 save(@RequestBody Book book) throws IOException {
         // 通过异步请求的请求体JSON串提交过来
-        return new R08(bookService.save(book));
+        if (book.getName().equals("123")) {
+            throw new IOException();
+        }
+        boolean flag = bookService.save(book);
+        return new R08(flag, flag ? "添加成功^_^" : "添加失败-_-!");
     }
 
     // 和视频不一样
