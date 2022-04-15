@@ -7,7 +7,8 @@ Tips" 学习顺序记录
     3- 阿里云创建这一个被省略了, 没什么技术
     4- springboot_01_04_quickstart: 手工创建SpringBoot工程
     5- springboot_02_base_configuration: 配置篇, 讲解SpringBoot|YML的配置
-
+    6- springboot_04_Junit: SpringBoot整个Junit测试技术
+    7- springboot_08_SSMP: SpringBoot快速开发的小型项目
 
 
 
