@@ -1,6 +1,7 @@
 package com.litway.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.litway.controller.utils.R08;
 import com.litway.entity.Book;
 import com.litway.service.IBookService05;
@@ -51,7 +52,13 @@ public class BookController09 {
 
     @GetMapping("/{currentPage}/{pageSize}")
     public R08 page(@PathVariable("currentPage") int currentPage, @PathVariable("pageSize") int pageSize) {
-        return new R08(true, bookService.getPage(currentPage, pageSize));
+        Page<Book> page = bookService.getPage(currentPage, pageSize);
+        // 如果请求的页码值大于了最大页码, 那么就返回最后一页
+        if (currentPage > page.getPages()) {
+            // 这里面别忘了覆盖数据
+            page = bookService.getPage((int)page.getPages(), pageSize);
+        }
+        return new R08(true, page);
     }
 
 
