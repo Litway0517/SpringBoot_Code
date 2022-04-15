@@ -9,6 +9,9 @@ public class R08 {
     // 封装的数据
     private Object data;
 
+    // 异常消息
+    private String msg;
+
     public R08() {}
 
     public R08(boolean flag) {
@@ -18,5 +21,15 @@ public class R08 {
     public R08(boolean flag, Object data) {
         this.flag = flag;
         this.data = data;
+    }
+
+    public R08(String msg) {
+        this.flag = false;
+        this.msg = msg;
+    }
+
+    public R08(boolean flag, String msg) {
+        this.flag = flag;
+        this.msg = msg;
     }
 }
