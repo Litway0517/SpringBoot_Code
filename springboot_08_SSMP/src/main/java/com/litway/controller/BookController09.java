@@ -51,12 +51,12 @@ public class BookController09 {
     }
 
     @GetMapping("/{currentPage}/{pageSize}")
-    public R08 page(@PathVariable("currentPage") int currentPage, @PathVariable("pageSize") int pageSize) {
-        Page<Book> page = bookService.getPage(currentPage, pageSize);
+    public R08 page(@PathVariable("currentPage") int currentPage, @PathVariable("pageSize") int pageSize, Book book) {
+        Page<Book> page = bookService.getPage(currentPage, pageSize, book);
         // 如果请求的页码值大于了最大页码, 那么就返回最后一页
         if (currentPage > page.getPages()) {
             // 这里面别忘了覆盖数据
-            page = bookService.getPage((int)page.getPages(), pageSize);
+            page = bookService.getPage((int)page.getPages(), pageSize, book);
         }
         return new R08(true, page);
     }
