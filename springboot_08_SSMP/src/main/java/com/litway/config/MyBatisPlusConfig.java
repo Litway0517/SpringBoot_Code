@@ -8,6 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
+/**
+ * 我batis +配置
+ *
+ * @author DELL_
+ * @date 2022/04/16
+ */
+
 // @Configuration将此类标注为配置类, 但是还会有一些基础功能, 就是将该类装入IOC容器. 本身就是Spring的注解, 自然而然会将对象装进去的
 @Configuration
 public class MyBatisPlusConfig {
