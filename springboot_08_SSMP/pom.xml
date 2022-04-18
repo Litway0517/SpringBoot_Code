@@ -51,6 +51,7 @@
         </dependency>
     </dependencies>
 
+    <!-- 打jar包的插件 -->
     <build>
         <plugins>
             <plugin>
