@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
-
 @RestController
 @RequestMapping("/books")
 public class BookController09 {

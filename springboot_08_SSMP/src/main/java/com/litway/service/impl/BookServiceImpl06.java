@@ -10,6 +10,12 @@ import com.litway.service.IBookService05;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 书服务impl06
+ *
+ * @author DELL_
+ * @date 2022/04/19
+ */
 @Service
 public class BookServiceImpl06 extends ServiceImpl<BookMapper, Book> implements IBookService05 {
 
