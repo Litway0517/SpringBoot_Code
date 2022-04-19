@@ -2,6 +2,9 @@ package com.litway.controller.utils;
 
 import lombok.Data;
 
+/*
+    表现层一致类
+ */
 @Data
 public class R08 {
     // 传给前端的此次请求的成功或失败标识
