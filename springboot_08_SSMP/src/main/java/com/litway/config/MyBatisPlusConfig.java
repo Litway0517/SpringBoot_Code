@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 /**
- * 我batis +配置
+ * MyBatisPlus配置类
  *
  * @author DELL_
  * @date 2022/04/16
