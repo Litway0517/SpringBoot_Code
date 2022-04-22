@@ -16,6 +16,10 @@ import java.io.IOException;
         - 查询指定端口: netstat -ano | findstr "端口号"
         - 根据PID进程号查询进程名称: tasklist | findstr "进程PID号"
         - 根据PID结束任务: taskkill -f -pid "进程PID号"
+
+    结论: 使用下面两条就行了
+        - 查询指定端口: netstat -ano | findstr "端口号"
+        - 根据PID结束任务: taskkill -f -pid "进程PID号"
  */
 @RestController
 @RequestMapping("/books")
