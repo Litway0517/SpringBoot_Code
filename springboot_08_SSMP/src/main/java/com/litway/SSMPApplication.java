@@ -25,7 +25,11 @@ public class SSMPApplication {
         // 当然也能够手动传参
         String[] arg = new String[1];
         arg[0] = "--server.port=8082";
-        SpringApplication.run(SSMPApplication.class, arg);
+
+        // SpringApplication.run(SSMPApplication.class, arg);
+
+        // 启动SpringBoot程序的时候可以断开读取临时配置对应的入口, 也就是去掉读取外部参数的形参
+        SpringApplication.run(SSMPApplication.class);
     }
 
 }
