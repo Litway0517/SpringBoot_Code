@@ -21,3 +21,10 @@ server:
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+
+
+# SpringBoot的四级配置, 一级最高, 会覆盖二三四级
+# 4- 类路径下的application.yml: classpath:/application.yml
+# 3- 类路径下的config目录下的application.yml: classpath:/config/application.yml
+# 2- jar包所在目录同级中的: jar同级-application.yml
+# 1- jar包所在目录下的config目录中的application.yml: jar-config/application.yml
