@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Arrays;
 
 /**
- * ssmpapplication
+ * SSMPApplication
  *
  * @author DELL_
  * @date 2022/04/17
