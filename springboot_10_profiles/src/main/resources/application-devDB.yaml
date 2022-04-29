@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    hikari:
+      username: root
+      password: root
+      auto-commit: true

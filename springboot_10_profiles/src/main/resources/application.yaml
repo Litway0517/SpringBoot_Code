@@ -1,0 +1,7 @@
+# 将配置都给拆解开, 分成application-devDB.yaml, application-devMVC.yaml等配置. 使用include进行叠加配置
+# 优点是便于细化配置更新, 系统更安全
+spring:
+  profiles:
+    active: dev
+    # 使用spring.profiles.include包含其他的配置文件
+    include: devMVC, devDB
