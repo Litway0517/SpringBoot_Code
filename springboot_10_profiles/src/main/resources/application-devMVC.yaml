@@ -2,3 +2,4 @@ server:
   servlet:
     # 用来配置上下文路径的名称
     context-path: /ebank
+  port: 83
