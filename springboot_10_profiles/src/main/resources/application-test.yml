@@ -1,0 +1,37 @@
+# 应用环境 -> 真正使用的环境
+# 公共环境(默认环境, 以下的三个环境都不加区分的配置可以写在此区域) -> 选中下面的环境后, 配置会叠加, 重复的地方则以新环境为准
+spring:
+  profiles:
+    active: pro
+
+# 三个短横线, 表示的是一个新环境
+---
+# 设置环境
+# 生产环境
+spring:
+  config:
+    activate:
+      on-profile: pro
+server:
+  port: 81
+
+
+---
+# 开发环境
+# 设置别名
+spring:
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 82
+
+
+---
+# 测试环境
+spring:
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 83
