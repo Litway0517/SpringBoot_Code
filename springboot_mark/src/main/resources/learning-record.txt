@@ -9,6 +9,10 @@ Tips" 学习顺序记录
     5- springboot_02_base_configuration: 配置篇, 讲解SpringBoot|YML的配置
     6- springboot_04_Junit: SpringBoot整个Junit测试技术
     7- springboot_08_SSMP: SpringBoot快速开发的小型项目
+    8- springboot_09_config: SpringBoot的配置文件. 修改配置文件的名称然后指定读取某文件为配置文件. 需要在配置选项卡里面
+       勾选Program Arguments, 填写--spring.config.location=classpath:/ebank.yml,classpath:/ebank.properties.
+    9- springboot_10_profiles: 实现多环境开发. 单一YAML配置文件实现多环境开发(---三个短横线就可以配置新环境). 多个YAML配置文件
+       实现多环境开发. 多个properties文件实现多环境开发. include加载其他配置文件. group加载其他配置文件.
 
 
 
