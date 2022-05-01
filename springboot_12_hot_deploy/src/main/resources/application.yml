@@ -1,0 +1,26 @@
+# 更改端口
+server:
+  port: 80
+  # windows下可以使用临时属性启动: java -jar name.jar --server.port=8080
+  # windows下可以使用临时属性启动: java -jar name.jar --server.port=8080 --spring.datasource.druid.password=123
+  # 配置文件的顺序参见Spring官网的说明, PDF上面也有
+
+# druid数据源
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # url: jdbc:mysql://localhost:3306/springboot_code
+      url: jdbc:mysql://192.168.137.1:3306/springboot_code
+      username: root
+      password: root
+
+# 表名前缀
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: t_
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
