@@ -57,6 +57,7 @@ public class BookController {
 
     @GetMapping("/{id}")
     public Result getBookById(@PathVariable("id") Integer id) {
+        System.out.println("test hot deploy...");
         return new Result(true, bookService.getById(id));
     }
 
