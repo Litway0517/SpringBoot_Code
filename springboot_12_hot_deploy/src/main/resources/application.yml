@@ -19,6 +19,9 @@ spring:
     restart:
       # static文件目录下的所有文件, public文件目录下的所有文件, config目录下的application.yml
       exclude: static/**,public.**,config/application.yml
+      # 关闭热部署 -> 能够生效, 但是别人可能会在其他级别的配置文件覆盖此配置 -> 结局方法: 到Boot启动类从系统层面解决热部署
+      enabled: false
+
 
 # 表名前缀
 mybatis-plus:
