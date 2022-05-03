@@ -7,3 +7,7 @@ servers:
         port: 81
         timeout: -1
 
+
+datasource:
+  driverCLassName: com.mysql.cj.jdbc.driver
+
