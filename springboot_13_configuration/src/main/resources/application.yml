@@ -1,1 +1,9 @@
+# 自定义的配置, 没啥用. 主要为了测试ServletConfig类接收配置数据使用的
+servers:
+  a:
+    b:
+      c:
+        ipAddress: 192.168.1.101
+        port: 81
+        timeout: -1
 
