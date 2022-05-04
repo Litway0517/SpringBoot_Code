@@ -3,11 +3,17 @@ servers:
   a:
     b:
       c:
-        ipAddress: 192.168.1.101
+#        ipAddress: 192.168.1.101            # 驼峰模式
+        # 下面这几种和上面是一样的, 都能被成功注入到Bean中
+        # ipaddress: 192.168.1.101
+        # ip_address: 192.168.1.101         # underline下划线格式
+         ip-address: 192.168.1.101         # 推荐格式 烤肉串格式
+        # IP_ADDRESS: 192.168.1.101         # 常量命名格式
+        # IP_ADDR_E-SS: 192.168.1.101
         port: 81
         timeout: -1
 
 
-datasource:
+dataSource:
   driverCLassName: com.mysql.cj.jdbc.driver
 
