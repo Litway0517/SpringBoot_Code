@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Bean;
 public class Springboot13ConfigurationApplication {
 
 	@Bean
+	// prefix的值只能使用纯小写字母, 数字, 下划线作为合法字符. 大写是不行的
 	@ConfigurationProperties(prefix = "datasource")
 	public DruidDataSource dataSource() {
 		// 德鲁伊的数据加载是懒加载
