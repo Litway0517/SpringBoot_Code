@@ -13,6 +13,9 @@ Tips" 学习顺序记录
        勾选Program Arguments, 填写--spring.config.location=classpath:/ebank.yml,classpath:/ebank.properties.
     9- springboot_10_profiles: 实现多环境开发. 单一YAML配置文件实现多环境开发(---三个短横线就可以配置新环境). 多个YAML配置文件
        实现多环境开发. 多个properties文件实现多环境开发. include加载其他配置文件. group加载其他配置文件.
+   10- springboot_12_hot_deploy: SpringBoot的热部署功能. 需要依赖spring-boot-devtools. 开启IDEA的自动编译 开启高级设置中的重启功能.
+       每当IDEA失焦五秒钟之后 就会自动重启主线程. (比较费内存就关闭了)
+   11- springboot_13_configuration: SpringBoot的高级配置.
 
 
 
