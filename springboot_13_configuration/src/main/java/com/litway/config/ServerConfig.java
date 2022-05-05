@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.time.Duration;
+
 @Data
 // 标注此类归Spring容器管理, 不和@EnableConfigurationProperties一块使用
 //@Component
@@ -15,5 +17,7 @@ public class ServerConfig {
     private String ipAddress;
     private int port;
     private long timeout;
+
+    private Duration serverTimeOut;
 
 }
