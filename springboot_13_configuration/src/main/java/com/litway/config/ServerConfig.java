@@ -2,9 +2,11 @@ package com.litway.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.convert.DurationUnit;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 
 @Data
 // 标注此类归Spring容器管理, 不和@EnableConfigurationProperties一块使用
@@ -18,6 +20,7 @@ public class ServerConfig {
     private int port;
     private long timeout;
 
+    @DurationUnit(ChronoUnit.HOURS)
     private Duration serverTimeOut;
 
 }
