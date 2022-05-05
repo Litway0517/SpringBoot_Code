@@ -13,6 +13,7 @@ servers:
         port: 81
         timeout: -1
         serverTimeOut: 3
+        dataSize: 1MB
 
 
 dataSource:

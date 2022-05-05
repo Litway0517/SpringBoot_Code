@@ -2,8 +2,11 @@ package com.litway.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.convert.DataSizeUnit;
 import org.springframework.boot.convert.DurationUnit;
 import org.springframework.stereotype.Component;
+import org.springframework.util.unit.DataSize;
+import org.springframework.util.unit.DataUnit;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -20,7 +23,13 @@ public class ServerConfig {
     private int port;
     private long timeout;
 
+    // @DurationUnit用来指定Duration类型的单位. 毫秒 秒 分 时 天 周 月 年等等. 默认单位为毫秒
     @DurationUnit(ChronoUnit.HOURS)
     private Duration serverTimeOut;
+
+    // @DataSizeUnit注解用来标识DataSize类型的数据的单位. 如果直接在配置文件写上10MB也行, 但是不能使用注解. 如果使用的话以配置文件为准
+    // 单位分为字节 KB MB GB TB. 默认为字节
+    @DataSizeUnit(DataUnit.KILOBYTES)
+    private DataSize dataSize;
 
 }
