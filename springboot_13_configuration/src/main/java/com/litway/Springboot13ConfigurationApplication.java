@@ -31,7 +31,7 @@ public class Springboot13ConfigurationApplication {
 		ServerConfig bean = run.getBean(ServerConfig.class);
 		System.out.println(bean);
 		DruidDataSource ds = run.getBean(DruidDataSource.class);
-		System.out.println(ds);
+		// System.out.println(ds);
 		System.out.println(ds.getDriverClassName());
 
 	}

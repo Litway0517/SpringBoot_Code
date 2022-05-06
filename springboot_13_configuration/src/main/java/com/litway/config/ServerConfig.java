@@ -1,6 +1,7 @@
 package com.litway.config;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.convert.DataSizeUnit;
 import org.springframework.boot.convert.DurationUnit;
@@ -40,5 +41,12 @@ public class ServerConfig {
     // 校验最大值不能超过8888, 否则提示message消息
     @Max(value = 8888, message = "最大值不能超过8888")
     private int testData;
+
+    // 取数据库密码
+    @Value("${datasource.password1}")
+    private String password1;
+
+    @Value("${datasource.password2}")
+    private String password2;
 
 }
