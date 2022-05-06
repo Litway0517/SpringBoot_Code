@@ -37,9 +37,21 @@
 			<artifactId>druid</artifactId>
 			<version>1.2.6</version>
 		</dependency>
+		<!-- 用来解决在打开某些实体类之后会出现警告提醒的依赖 配置处理器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+		<!-- 第一步: 配置文件YML中数据有效性的校验 这是一套规范(接口) JSR303规范 -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
+		<!-- 第二步去待校验的Bean上加上@Validated注解 -->
+		<!-- 第三步就是加上JSR303规范的一个实现依赖 因为JSR303仅仅是一组接口(就像JDBC一样) -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 	</dependencies>
 
