@@ -14,7 +14,8 @@ servers:
         timeout: -1
         serverTimeOut: 3
         dataSize: 1MB
-
+        # 这里面的配置的数据存在有效性问题. 例如: servetTimeOut需要的是一个数字类型的时间, 而有可能输入有误导致字符串类型. 因此需要引入校验
+        testData: 9999
 
 dataSource:
   driverCLassName: com.mysql.cj.jdbc.driver
