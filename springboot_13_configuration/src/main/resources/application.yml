@@ -15,8 +15,13 @@ servers:
         serverTimeOut: 3
         dataSize: 1MB
         # 这里面的配置的数据存在有效性问题. 例如: servetTimeOut需要的是一个数字类型的时间, 而有可能输入有误导致字符串类型. 因此需要引入校验
-        testData: 9999
+        # testData: 9999
+        testData: 8090
 
 dataSource:
   driverCLassName: com.mysql.cj.jdbc.driver
+  # 0打头是八进制, 后面的数字在0-7之内, 认为是八进制. 如0127, 0125, 0777等
+  # 0x打头是十六进制, 后面的数字在0-9 A B C D E. 如0xFF等
+  password1: 0127     # 如果这样写, 因为Bean中接收该配置的成员变量类型为String, 那么会认为是八进制. 0127 转换为 87
+  password2: "0127"   # 这样就不会解析为87
 
