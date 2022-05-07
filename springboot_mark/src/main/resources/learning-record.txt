@@ -16,6 +16,7 @@ Tips" 学习顺序记录
    10- springboot_12_hot_deploy: SpringBoot的热部署功能. 需要依赖spring-boot-devtools. 开启IDEA的自动编译 开启高级设置中的重启功能.
        每当IDEA失焦五秒钟之后 就会自动重启主线程. (比较费内存就关闭了)
    11- springboot_13_configuration: SpringBoot的高级配置.
+   12-
 
 
 
