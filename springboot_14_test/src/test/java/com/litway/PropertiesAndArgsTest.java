@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
-// SpringBoot的properties参数能够指定当前测试环境的参数, 而不是使用开发环境的配置文件作为配置
-@SpringBootTest(properties = {"test.prop=testValue1"})
+// SpringBoot的properties参数能够 为当前测试环境添加临时配置属性, 而不是使用开发环境的配置文件作为配置
+// @SpringBootTest(properties = {"test.prop=testValue1"})
+
+// SpringBoot的args参数也能够 为当前测试环境添加临时属性, 只不过有一点不一样
+@SpringBootTest(args = {"--test.prop=8081"})
 public class PropertiesAndArgsTest {
 
     @Value("${test.prop}")
@@ -17,7 +20,7 @@ public class PropertiesAndArgsTest {
     void testProperties() {
         System.out.println(value);
 
-        int[] array = new int[]{};
+        int[] array = new int[]{0, 1};
         array[0] = 1;
         System.out.println(array[0]);
 
