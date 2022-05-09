@@ -1,2 +1,5 @@
-#test:
-#  prop: testValue
+test:
+  prop: testValue
+
+server:
+  port: 80
