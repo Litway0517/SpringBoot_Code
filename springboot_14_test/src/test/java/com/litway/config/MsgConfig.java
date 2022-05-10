@@ -4,6 +4,10 @@ package com.litway.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 消息配置
+ */
+
 // Configuration注解用来告诉spring容器这是一个配置类
 @Configuration
 public class MsgConfig {
