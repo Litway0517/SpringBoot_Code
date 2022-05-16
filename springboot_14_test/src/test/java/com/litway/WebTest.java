@@ -9,8 +9,8 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.ContentResultMatchers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.result.RequestResultMatchers;
 import org.springframework.test.web.servlet.result.StatusResultMatchers;
 
 // webEnvironment参数的可选值为: RANDOM_PORT(随机生成端口) | DEFINE_PORT(使用配置文件的) | MOCK | NONE(无端口)
@@ -36,7 +36,23 @@ public class WebTest {
     }
 
     @Test
-    void testWeb2(@Autowired MockMvc mvc) throws Exception {
+    void testBody(@Autowired MockMvc mvc) throws Exception {
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/books");
+        // 发送请求, 会有一个返回值
+        ResultActions perform = mvc.perform(builder);
+
+        // 获取本次发送请求的响应体, 返回的是ContentResultMatchers对象
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+        // 设置本次请求的预计值
+        ResultMatcher result = content.string("springboot");
+
+        // 添加预计值到本次调用中, 进行匹配
+        perform.andExpect(result);
+
+    }
+
+    @Test
+    void testStatus(@Autowired MockMvc mvc) throws Exception {
         /*
             S1- 模拟请求
             S2- 发送请求
