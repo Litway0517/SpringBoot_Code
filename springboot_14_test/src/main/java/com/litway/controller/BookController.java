@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+/**
+ * 图书控制器
+ */
 @RestController
 @RequestMapping("/books")
 public class BookController {
