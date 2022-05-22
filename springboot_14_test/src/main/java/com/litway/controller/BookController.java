@@ -1,6 +1,8 @@
 package com.litway.controller;
 
 
+import com.litway.entity.Book;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @GetMapping
-    public String getBookById() {
+    public Book getBookById() {
         System.out.println("getBook is running...");
-        return "springboot";
+
+        Book book = new Book();
+        book.setId(10);
+        book.setName("从入门到删库跑路");
+        book.setDescription("测试");
+        book.setType("SpringCloud");
+
+        return book;
     }
 
 }
