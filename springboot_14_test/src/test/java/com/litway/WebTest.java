@@ -40,6 +40,28 @@ public class WebTest {
     }
 
     @Test
+    void testJson(@Autowired MockMvc mockMvc) throws Exception {
+        // 构造请求
+        MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get("/books");
+
+        // 发送请求
+        ResultActions perform = mockMvc.perform(mock);
+
+        // 获取本次测试的结果
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+
+        // 设计本次请求得到的结果(主要是观察错误时的信息)
+        ResultMatcher json = content.json("{\"id\":10,\"type\":\"SpringCloud\",\"name\":\"从入门到删库跑路\",\"description\":\"测试\"}");
+
+        // 自动进行匹配测试
+        perform.andExpect(json);
+
+    }
+
+
+
+    // 返回一个字符串
+    @Test
     void testBody(@Autowired MockMvc mvc) throws Exception {
         MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/books");
         // 发送请求, 会有一个返回值
