@@ -2,7 +2,6 @@ package com.litway.controller;
 
 
 import com.litway.entity.Book;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
