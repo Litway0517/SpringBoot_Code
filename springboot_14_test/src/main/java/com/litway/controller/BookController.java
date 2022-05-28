@@ -16,7 +16,6 @@ public class BookController {
 
     @GetMapping
     public Book getBookById() {
-        System.out.println("getBook is running...");
 
         Book book = new Book();
         book.setId(10);
