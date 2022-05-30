@@ -29,11 +29,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- MQTT 2 3 4 小课 -->
+
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-mqtt</artifactId>
-            <version>5.5.3</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
