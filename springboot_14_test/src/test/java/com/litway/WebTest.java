@@ -10,6 +10,7 @@ import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.ContentResultMatchers;
+import org.springframework.test.web.servlet.result.HeaderResultMatchers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.result.StatusResultMatchers;
 
@@ -37,6 +38,26 @@ public class WebTest {
     @Test
     void testWeb1() {
         System.out.println(mockMvc);
+    }
+
+    // 匹配响应头
+    @Test
+    void testHeaders(@Autowired MockMvc mockMvc) throws Exception {
+        // 发送请求
+        MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get("/books");
+
+        // 发送请求
+        ResultActions perform = mockMvc.perform(mock);
+
+        // 获取测试结果
+        HeaderResultMatchers header = MockMvcResultMatchers.header();
+
+        // 设置预期值
+        ResultMatcher matcher = header.string("Content-Type", "application/json");
+
+        // 比较
+        perform.andExpect(matcher);
+
     }
 
 
