@@ -40,7 +40,36 @@ public class WebTest {
         System.out.println(mockMvc);
     }
 
-    // 匹配响应头
+    // 真正使用这种方式进行测试时的例子
+    @Test
+    void testGetBookById(@Autowired MockMvc mockMvc) throws Exception {
+        // 发送请求
+        MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get("/books");
+        // 发送请求
+        ResultActions perform = mockMvc.perform(mock);
+
+        /*
+            定义一个规则就匹配一个规则
+                1- 匹配请求状态是否成功
+                2- 匹配返回的内容
+                3- 匹配请求头
+         */
+        StatusResultMatchers status = MockMvcResultMatchers.status();
+        ResultMatcher ok = status.isOk();
+        perform.andExpect(ok);
+
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+        ResultMatcher json = content.json("{\"id\":10,\"type\":\"SpringCloud\",\"name\":\"从入门到删库跑路\",\"description\":\"测试\"}");
+        perform.andExpect(json);
+
+        HeaderResultMatchers header = MockMvcResultMatchers.header();
+        ResultMatcher matcher = header.string("Content-Type", "application/json");
+        perform.andExpect(matcher);
+
+    }
+
+
+    // 匹配响应头 -> 错误情况 请求时是text/plain;charset=UTF-8, 但是预测值为application/json
     @Test
     void testHeaders(@Autowired MockMvc mockMvc) throws Exception {
         // 发送请求

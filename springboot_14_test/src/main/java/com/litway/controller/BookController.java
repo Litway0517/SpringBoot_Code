@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @GetMapping
-    public String getBookById() {
+    public Book getBookById() {
 
         Book book = new Book();
         book.setId(10);
@@ -23,8 +23,8 @@ public class BookController {
         book.setDescription("测试");
         book.setType("SpringCloud");
 
-//        return book;
-        return "springboot...";
+        return book;
+//        return "springboot...";
     }
 
 }
