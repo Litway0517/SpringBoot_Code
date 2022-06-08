@@ -49,7 +49,7 @@ public class WebTest {
         ResultActions perform = mockMvc.perform(mock);
 
         /*
-            定义一个规则就匹配一个规则
+            定义一个规则就匹配一个规则. 获取一个结果之后设置对应的预测值就测试
                 1- 匹配请求状态是否成功
                 2- 匹配返回的内容
                 3- 匹配请求头
@@ -151,7 +151,5 @@ public class WebTest {
         perform.andExpect(ok);
 
     }
-
-
 
 }
