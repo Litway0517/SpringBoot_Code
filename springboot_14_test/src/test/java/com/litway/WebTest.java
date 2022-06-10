@@ -9,10 +9,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.ContentResultMatchers;
-import org.springframework.test.web.servlet.result.HeaderResultMatchers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.result.StatusResultMatchers;
+import org.springframework.test.web.servlet.result.*;
 
 /**
  * 表现层测试
@@ -61,6 +58,9 @@ public class WebTest {
         ContentResultMatchers content = MockMvcResultMatchers.content();
         ResultMatcher json = content.json("{\"id\":10,\"type\":\"SpringCloud\",\"name\":\"从入门到删库跑路\",\"description\":\"测试\"}");
         perform.andExpect(json);
+
+        CookieResultMatchers cookie = MockMvcResultMatchers.cookie();
+        System.out.println(cookie);
 
         HeaderResultMatchers header = MockMvcResultMatchers.header();
         ResultMatcher matcher = header.string("Content-Type", "application/json");
