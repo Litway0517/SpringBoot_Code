@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.result.*;
 
 import javax.servlet.http.Cookie;
 
+
 /**
  * 表现层测试
  */
@@ -44,6 +45,8 @@ public class WebTest {
     void testGetBookById(@Autowired MockMvc mockMvc) throws Exception {
         // 发送请求
         MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get("/books");
+        Cookie cookie = new Cookie("key", "value");
+        mock.cookie(cookie);
         // 发送请求
         ResultActions perform = mockMvc.perform(mock);
 
@@ -65,7 +68,7 @@ public class WebTest {
         System.out.println(ck);
 
         HeaderResultMatchers header = MockMvcResultMatchers.header();
-        ResultMatcher matcher = header.string("Content-Type", "application/json");
+        ResultMatcher matcher = header.string("Content-TypeA", "application/json");
         perform.andExpect(matcher);
 
     }
