@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -12,6 +13,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.*;
 
 import javax.servlet.http.Cookie;
+import javax.websocket.Session;
 
 
 /**
@@ -45,8 +47,15 @@ public class WebTest {
     void testGetBookById(@Autowired MockMvc mockMvc) throws Exception {
         // 发送请求
         MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get("/books");
+
+        // 为模拟请求添加cookie
         Cookie cookie = new Cookie("key", "value");
         mock.cookie(cookie);
+
+        // 为模拟请求添加session
+        MockHttpSession mockHttpSession = new MockHttpSession();
+        mockHttpSession.setAttribute("key", "cookie");
+        mock.session(mockHttpSession);
         // 发送请求
         ResultActions perform = mockMvc.perform(mock);
 
