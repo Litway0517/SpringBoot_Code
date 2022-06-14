@@ -55,6 +55,7 @@ public class WebTest {
         // 为模拟请求添加session
         MockHttpSession mockHttpSession = new MockHttpSession();
         mockHttpSession.setAttribute("key", "cookie");
+        mockHttpSession.setAttribute("name", "lit");
         mock.session(mockHttpSession);
         // 发送请求
         ResultActions perform = mockMvc.perform(mock);
