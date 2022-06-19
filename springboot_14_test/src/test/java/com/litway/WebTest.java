@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.*;
 
 import javax.servlet.http.Cookie;
-import javax.websocket.Session;
 
 
 /**
