@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -46,6 +47,11 @@ public class WebTest {
     void testGetBookById(@Autowired MockMvc mockMvc) throws Exception {
         // 发送请求
         MockHttpServletRequestBuilder mock = MockMvcRequestBuilders.get("/books");
+
+        // 增加refer请求头参数
+        HttpHeaders httpHeader = new HttpHeaders();
+        httpHeader.add("refer", "localhost");
+        mock.headers(httpHeader);
 
         // 为模拟请求添加cookie
         Cookie cookie = new Cookie("key", "value");
