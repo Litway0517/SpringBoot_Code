@@ -77,8 +77,14 @@ public class WebTest {
         System.out.println(ck);
 
         HeaderResultMatchers header = MockMvcResultMatchers.header();
-        ResultMatcher matcher = header.string("Content-TypeA", "application/json");
+        ResultMatcher matcher = header.string("Content-Type", "application/json");
         perform.andExpect(matcher);
+
+        // 获取引用头
+        ResultMatcher refer = header.string("refer", "localhost");
+        perform.andExpect(refer);
+
+
 
     }
 
