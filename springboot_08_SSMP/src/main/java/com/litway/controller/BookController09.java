@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 /*
-    关闭正在占用端口的称需
+    关闭正在占用的端口
         - 查询端口: netstat -ano
         - 查询指定端口: netstat -ano | findstr "端口号"
         - 根据PID进程号查询进程名称: tasklist | findstr "进程PID号"
