@@ -15,9 +15,9 @@ import org.apache.ibatis.annotations.Mapper;
 public interface BookMapper extends BaseMapper<Book> {
 
 
-    Book selectById(@Param("id")Integer id);
+    public Book selectById(@Param("id") Integer id);
 
-
+    public int deleteBook(@Param("id") Integer id);
 
 
 
