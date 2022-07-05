@@ -36,4 +36,12 @@ public class R08 {
         this.flag = flag;
         this.msg = msg;
     }
+
+    public static R08 success() {
+        return new R08(true, "操作成功");
+    }
+
+    public static R08 error() {
+        return new R08(false, "操作失败");
+    }
 }

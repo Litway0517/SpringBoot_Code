@@ -16,7 +16,7 @@ public class Book {
 
     private String description;
 
-    @TableLogic
+//    @TableLogic
     private boolean isDeleted;
 
     @Version
