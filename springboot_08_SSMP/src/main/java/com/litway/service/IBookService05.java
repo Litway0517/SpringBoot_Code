@@ -15,4 +15,6 @@ public interface IBookService05 extends IService<Book> {
     Page<Book> getPage(int currentPage, int pageSize);
 
     Page<Book> getPage(int currentPage, int pageSize, Book book);
+
+    public int deleteBookById(Integer id);
 }

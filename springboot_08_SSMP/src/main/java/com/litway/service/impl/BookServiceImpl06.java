@@ -39,4 +39,9 @@ public class BookServiceImpl06 extends ServiceImpl<BookMapper, Book> implements 
         bookMapper.selectPage(page, lambdaQueryWrapper);
         return page;
     }
+
+    @Override
+    public int deleteBookById(Integer id) {
+        return bookMapper.deleteBook(id);
+    }
 }
