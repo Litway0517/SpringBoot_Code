@@ -17,7 +17,7 @@ public interface BookMapper extends BaseMapper<Book> {
 
     public Book selectById(@Param("id") Integer id);
 
-    public int deleteBook(@Param("id") Integer id);
+    public int deleteBookById(@Param("id") Integer id);
 
 
 
