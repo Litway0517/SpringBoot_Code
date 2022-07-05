@@ -42,6 +42,6 @@ public class BookServiceImpl06 extends ServiceImpl<BookMapper, Book> implements 
 
     @Override
     public int deleteBookById(Integer id) {
-        return bookMapper.deleteBook(id);
+        return bookMapper.deleteBookById(id);
     }
 }

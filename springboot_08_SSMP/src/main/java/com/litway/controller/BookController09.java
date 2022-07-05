@@ -58,10 +58,11 @@ public class BookController09 {
     // 单独写的一个删除方法 物理删除
     @DeleteMapping("/2/{id}")
     public R08 delete2(@PathVariable("id") Integer id) {
-        if ((bookService.deleteBookById(id) == 0)) {
+        if (!(bookService.deleteBookById(id) == 0)) {
             return R08.success();
+        } else {
+            return R08.error();
         }
-        return R08.error();
     }
 
     @GetMapping("/{id}")
