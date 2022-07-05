@@ -55,6 +55,15 @@ public class BookController09 {
         return new R08(bookService.removeById(id));
     }
 
+    // 单独写的一个删除方法 物理删除
+    @DeleteMapping("/2/{id}")
+    public R08 delete2(@PathVariable("id") Integer id) {
+        if ((bookService.deleteBookById(id) == 0)) {
+            return R08.success();
+        }
+        return R08.error();
+    }
+
     @GetMapping("/{id}")
     public R08 getBookById(@PathVariable("id") Integer id) {
         return new R08(true, bookService.getById(id));
