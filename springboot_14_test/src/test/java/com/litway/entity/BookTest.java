@@ -50,7 +50,16 @@ class BookTest {
         System.out.println(ToFirstChar("0125asd测试A12"));
     }
 
+    @Test
+    public void testReg() {
+        String reg = "^[1-9](\\d{0,4})((\\.\\d{0,6})?)$";
+        BigDecimal bigDecimal = new BigDecimal("000012345.123456");
+        System.out.println(bigDecimal);
 
+
+        System.out.println(Pattern.matches(reg, bigDecimal.toString()));
+
+    }
 
 
 
