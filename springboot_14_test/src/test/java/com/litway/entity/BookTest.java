@@ -10,8 +10,13 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.regex.Pattern;
 
-import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * 书本测试
+ *
+ * @author DELL_
+ * @date 2022/07/18
+ */
 class BookTest {
 
     @Test
