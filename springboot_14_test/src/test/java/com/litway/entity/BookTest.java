@@ -58,12 +58,10 @@ class BookTest {
     @Test
     public void testReg() {
         String reg = "^[1-9](\\d{0,4})((\\.\\d{0,6})?)$";
+        // 这个BigDecimal不能直接转换成float
         BigDecimal bigDecimal = new BigDecimal("000012345.123456");
         System.out.println(bigDecimal);
-
-
         System.out.println(Pattern.matches(reg, bigDecimal.toString()));
-
     }
 
 
