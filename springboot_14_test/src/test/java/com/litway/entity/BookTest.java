@@ -12,9 +12,6 @@ import java.util.regex.Pattern;
 
 
 /**
- * 书本测试
- *
- * @author DELL_
  * @date 2022/07/18
  */
 class BookTest {
