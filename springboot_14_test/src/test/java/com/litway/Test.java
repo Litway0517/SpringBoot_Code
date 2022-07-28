@@ -18,6 +18,10 @@ public class Test {
 
         boolean b = s.endsWith(".");
         System.out.println(b);
+
+        boolean b1 = s.endsWith(" ");
+        System.out.println(b1);
+
     }
 
 
