@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @date 2022/07/22
  */
 @SpringBootTest
-public class Test {
+public class TestClass {
 
     @org.junit.jupiter.api.Test
     public void test() {
