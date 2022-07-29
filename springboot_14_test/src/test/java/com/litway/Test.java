@@ -16,12 +16,6 @@ public class Test {
         String s = "图文编号 " + "254345345" + " 已经存在, 请重新操作. ";
         System.out.println(s.contains("254345345"));
 
-        boolean b = s.endsWith(".");
-        System.out.println(b);
-
-        boolean b1 = s.endsWith(" ");
-        System.out.println(b1);
-
     }
 
 
