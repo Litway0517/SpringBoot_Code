@@ -40,7 +40,7 @@ class BookTest {
                 } catch (BadHanyuPinyinOutputFormatCombination e) {
                     e.printStackTrace();
                 }
-            }else{
+            }else {
                 pinyinStr += newChar[i];
             }
         }
