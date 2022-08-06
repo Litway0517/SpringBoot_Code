@@ -49,7 +49,7 @@ class BookTest {
 
     @Test
     public void testPinyin() {
-        System.out.println(ToFirstChar("0125asd测试A12"));
+        System.out.println(ToFirstChar("aa0125asd测试A12"));
     }
 
     @Test
@@ -59,6 +59,13 @@ class BookTest {
         BigDecimal bigDecimal = new BigDecimal("000012345.123456");
         System.out.println(bigDecimal);
         System.out.println(Pattern.matches(reg, bigDecimal.toString()));
+    }
+
+    @Test
+    public void testReg2() {
+        String reg = "^(?![A-Za-z0-9]+$)(?![a-z0-9\\W]+$)(?![A-Za-z\\W]+$)(?![A-Z0-9\\W]+$)[a-zA-Z0-9\\W]{5,}$";
+        String reg2 = "^([a-zA-Z0-9\\W]{5,})$";
+        System.out.println(Pattern.matches(reg2, "11111我们"));
     }
 
 
